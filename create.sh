@@ -67,14 +67,16 @@ createStoragesDirectory()
 
 createRootFiles()
 {
-    settings_file=$@'settings-model.ini'
-    touch $settings_file
-    settings_data= cat 'files-content/settings-model.ini'
-    echo $settings_data > $settings_file
+    touch $@'settings-model.ini'
+    cat 'files-content/settings-model.ini' > $@'settings-model.ini'
+
+    touch $@'webpack.config.js'
+    cat 'files-content/webpack.config.js' > $@'webpack.config.js'
+
     touch $@'composer.json'
     touch $@'readme'
     touch $@'.gitignore'
-    touch $@'webpack.js'
+    touch $@'package.json'
 }
 
 
